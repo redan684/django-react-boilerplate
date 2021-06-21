@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { isEmpty } from "../../utils/Utils";
 import {
   CREATE_USER_ERROR,
   CREATE_USER_SUBMITTED,
@@ -20,7 +19,7 @@ export const signupNewUser = userData => dispatch => {
       dispatch({ type: CREATE_USER_SUCCESS });
     })
     .catch(error => {
-      if (error.resposne) {
+      if (error.response) {
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
         toast.error(JSON.stringify(error.response.data));

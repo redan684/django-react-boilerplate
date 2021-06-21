@@ -3,14 +3,18 @@ import { withRouter } from "react-router-dom"; // new import
 import { connect } from "react-redux"; // new import
 import PropTypes from "prop-types"; // new import
 import { Link } from "react-router-dom";
+
 import {
   Container,
-  Button,
+ 
   Row,
   Col,
   Form,
   FormControl
 } from "react-bootstrap";
+import Card from "../UI/Card/Card";
+import classes from "./Login.module.css";
+import Button from "../UI/Button/Button";
 
 import { signupNewUser } from "./SignupActions"; // new import
 
@@ -37,12 +41,12 @@ class Signup extends Component {
 
   render() {
     return (
-      <Container>
+      <Card className={classes.login}>
         <Row>
-          <Col md="4">
+        
             <h1>Sign up</h1>
             <Form>
-              <Form.Group controlId="usernameId">
+              {/* <Form.Group controlId="usernameId">
                 <Form.Label>User name</Form.Label>
                 <Form.Control
                   isInvalid={this.props.createUser.usernameError}
@@ -70,19 +74,73 @@ class Signup extends Component {
                 <Form.Control.Feedback type="invalid">
                   {this.props.createUser.passwordError}
                 </Form.Control.Feedback>
-              </Form.Group>
+              </Form.Group> */}
+
+              <div className={classes.control}>
+              {/* <Form.Label>User name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="username"
+                  placeholder="Enter user name"
+                  value={this.state.username}
+                  onChange={this.onChange}
+                /> */}
+              <label htmlFor="user">User Name</label>
+              <input
+                          isInvalid={this.props.createUser.usernameError}
+                type="text"
+                id="user"
+                name="username"
+                placeholder="Enter user name"
+                value={this.state.username}
+                onChange={this.onChange}
+              />
+                  <FormControl.Feedback type="invalid">
+                  {this.props.createUser.usernameError}
+                </FormControl.Feedback>
+            </div>
+            {/* </Form.Group> */}
+
+            {/* <Form.Group controlId="passwordId">
+              <Form.Label>Your password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                value={this.state.password}
+                onChange={this.onChange}
+              />
+            </Form.Group> */}
+             <div
+          className={classes.control} 
+        >
+          <label htmlFor="password">Password</label>
+          <input
+          isInvalid={this.props.createUser.passwordError}
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+            value={this.state.password}
+            onChange={this.onChange}
+          />
+                   <Form.Control.Feedback type="invalid">
+                  {this.props.createUser.passwordError}
+                </Form.Control.Feedback>
+        </div>
+              
             </Form>
-          
-            <Button color="primary" onClick={this.onSignupClick}>
+            <div className={classes.actions}>
+            <Button color="primary"  className={classes.btn} onClick={this.onSignupClick}>
               Sign up
             </Button>
-            
+            </div>
             <p className="mt-2">
               Already have account? <Link to="/login">Login</Link>
             </p>
-          </Col>
+         
         </Row>
-      </Container>
+      </Card>
     );
   }
 }
