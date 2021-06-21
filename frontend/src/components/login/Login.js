@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
-import {  Row,  Form, Navbar, Nav } from "react-bootstrap";
+import {  Row,  Form, Navbar} from "react-bootstrap";
 
 import { login } from "./LoginActions.js"; // new import
 
@@ -84,12 +84,13 @@ class Login extends Component {
             onChange={this.onChange}
           />
         </div>
-          </Form>
+         
           <div className={classes.actions}>
             <Button color="primary"  className={classes.btn} onClick={this.onLoginClick}>
               Login
             </Button>
           </div>
+          </Form>
           <p className="mt-2">
             Don't have account? <Link to="/signup">Signup</Link>
           </p>

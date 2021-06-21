@@ -5,12 +5,12 @@ import PropTypes from "prop-types"; // new import
 import { Link } from "react-router-dom";
 
 import {
-  Container,
+ 
  
   Row,
-  Col,
+ 
   Form,
-  Navbar, Nav ,
+  Navbar, 
   FormControl
 } from "react-bootstrap";
 import Card from "../UI/Card/Card";
