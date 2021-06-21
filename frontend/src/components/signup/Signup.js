@@ -10,6 +10,7 @@ import {
   Row,
   Col,
   Form,
+  Navbar, Nav ,
   FormControl
 } from "react-bootstrap";
 import Card from "../UI/Card/Card";
@@ -41,6 +42,10 @@ class Signup extends Component {
 
   render() {
     return (
+      <>
+      <Navbar bg="dark" variant="dark">
+      <Navbar.Brand  href="/">Home</Navbar.Brand>
+      </Navbar>
       <Card className={classes.login}>
         <Row>
         
@@ -141,6 +146,7 @@ class Signup extends Component {
          
         </Row>
       </Card>
+      </>
     );
   }
 }
