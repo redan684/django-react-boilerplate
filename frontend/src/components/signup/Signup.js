@@ -72,9 +72,11 @@ class Signup extends Component {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form>
+          
             <Button color="primary" onClick={this.onSignupClick}>
               Sign up
             </Button>
+            
             <p className="mt-2">
               Already have account? <Link to="/login">Login</Link>
             </p>
