@@ -27,7 +27,8 @@ class Dashboard extends Component {
             <Nav.Link onClick={this.onLogout}>Logout</Nav.Link>
           </Navbar.Collapse>
         </Navbar>
-        <Container> {/* update here */}
+        <Container > {/* update here */}
+        <div className='mt-5'></div>
           <NotesList />
           <AddNote />
         </Container>
